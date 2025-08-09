@@ -1,34 +1,29 @@
-#include "Human.h"
-#include "Move.h"
-#include "Rock.h"
-#include "Scissors.h"
-#include "Paper.h"
-#include "Monkey.h"
-#include "Robot.h"
-#include "Pirate.h"
-#include "Ninja.h"
-#include "Zombie.h"
 #include <iostream>
-#include <string>
+#include<string>
+
+#include "Human.h"
 #include "MoveSelector.h"
-using namespace std;
 
-
-Move * Human::makeMove(){
-    MoveSelector * sel = new MoveSelector();
-    string moveName;
-    cout << "Enter move: ";
-    cin >> moveName;
-    move = sel->selectMove(moveName);
-    return move;
-}
-string Human::getName(){
-    return name;
-}
-
-Human::Human(string _name){
-    name = _name;
-}
+// default constructor set name to "Human"
 Human::Human(){
-    name = "Human";
+    this->name = "Human";
+}
+
+// set name to the provided value
+Human::Human(std::string name){
+    this->name = name;
+}
+
+// get humans input and return it
+Move* Human::makeMove(){
+    std::string res;
+    std::cout << "Enter move:";
+    std::cin >> res;
+
+    return this->move_selector.string_to_move(res);
+}
+
+// return the humans name
+std::string Human::getName(){
+    return this->name;
 }

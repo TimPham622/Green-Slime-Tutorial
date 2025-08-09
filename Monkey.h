@@ -1,16 +1,21 @@
 #pragma once
-#include <bits/stdc++.h>
-using namespace std;
+
+#include <string>
+
 #include "Move.h"
 
-class Monkey: public Move{
-    public:
-        string getName(){
-            return "Monkey";
-        }
-        Monkey(){
-            wins.push_back("Ninja");
-            wins.push_back("Robot");
-        };
+class Monkey : public Move {
+private:
+    // set Monkey UID
+    int UID = 4;
 
+    // set move name
+    std::string name = "Monkey";
+
+public:
+    int getUID();
+
+    std::string getName();
+
+    int isWinner(int Opponent);
 };

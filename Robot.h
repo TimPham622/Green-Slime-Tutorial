@@ -1,16 +1,19 @@
 #pragma once
-#include <bits/stdc++.h>
-using namespace std;
+
+#include <unordered_set>
+#include <string>
+
 #include "Move.h"
 
-class Robot: public Move{
-    public:
-        string getName(){
-            return "Robot";
-        }
-        Robot(){
-            wins.push_back("Ninja");
-            wins.push_back("Zombie");
-        };
+class Robot : public Move {
+private:
+    int UID = 5;
+    std::string name = "Robot";
+public:
+    int getUID();
+
+    std::string getName();
+
+    int isWinner(int Opponent);
 
 };

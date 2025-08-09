@@ -1,13 +1,18 @@
 #pragma once
-#include <bits/stdc++.h>
-using namespace std;
 
+#define INVALID -1
+#define WINNER 0
+#define TIE 1
+#define LOSER 2
+
+#include <string>
+
+// pure virtual move class
 class Move {
-    protected:
-    string name;
-    vector<string> wins;
+public:
+    virtual int getUID() = 0;
 
-    public:
-    virtual string getName();
-    bool compareMove(Move * move);
+    virtual std::string getName() = 0;
+
+    virtual int isWinner(int Opponent) = 0;
 };

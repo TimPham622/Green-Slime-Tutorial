@@ -1,15 +1,16 @@
 #pragma once
-#include <bits/stdc++.h>
-using namespace std;
 #include "Move.h"
 
-class Paper: public Move{
-    public:
-        string getName(){
-            return "Paper";
-        }
-        Paper(){
-            wins.push_back("Rock");
-        }
+
+class Paper : public Move {
+private:
+    int UID = 1;
+    std::string name = "Paper";
+public:
+    int getUID();
+
+    std::string getName();
+
+    int isWinner(int Opponent);
 
 };

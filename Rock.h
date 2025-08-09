@@ -1,12 +1,18 @@
-#include "Move.h"
 #pragma once
 
-class Rock: public Move{
-    public:
-        string getName(){
-            return "Rock";
-        }
-        Rock(){
-            wins.push_back("Scissors");
-        };
+#include "Move.h"
+
+class Rock : public Move {
+private:
+    int UID = 2;
+    std::string name = "Rock";
+public:
+    int getUID();
+
+    std::string getName();
+
+    int isWinner(int Opponent);
+
 };
+
+

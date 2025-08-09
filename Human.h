@@ -1,15 +1,21 @@
 #pragma once
-using namespace std;
-#include <bits/stdc++.h>
+#include <string>
+
 #include "Player.h"
 #include "Move.h"
 
-class Human: public Player{
-    protected:
-    public:
-        Human();
-        Human(string name);
-        virtual Move * makeMove();
-        virtual string getName();
+class Human : public Player{
+private:
+    // store the players name
+    std::string name;
+public:
+    // inisialise the player object with a name
+    Human();
+    Human(std::string name);
 
+    // get the move of the player (based on input)
+    Move* makeMove();
+
+    // return the name of the player
+    std::string getName();
 };

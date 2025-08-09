@@ -1,14 +1,11 @@
 #pragma once
-#include <bits/stdc++.h>
-using namespace std;
-#include "Move.h"
 
+#include <string>
+#include "MoveSelector.h"
+// abstract class that has children Human and Computer
 class Player {
-    protected:
-    string name;
-    Move * move;
-
-    public:
-    virtual Move * makeMove();
-    virtual string getName();
+public:
+    MoveSelector move_selector;
+    virtual Move* makeMove() = 0;
+    virtual std::string getName() = 0;
 };

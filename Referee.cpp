@@ -1,27 +1,28 @@
-#include "Referee.h"
 #include "Player.h"
+#include "Referee.h"
 #include "Move.h"
-#include <iostream>
-Player * Referee::refGame(Player * player1, Player * player2){
-    Move * move1 = NULL;
-    Move * move2 = NULL;
-    if (player1){
-        move1 = player1->makeMove();
-    }
-    if (player2){
-        move2 = player2->makeMove();
-    }
-    if (move1->getName() == move2->getName()){
-        return NULL;
-    }
-    if (move1->compareMove(move2)){
-        return player1;
-    } else {
 
-        return player2;
-    }
-
-};
 Referee::Referee(){
 
-};
+}
+
+Player* Referee::refGame(Player * player1, Player * player2){
+    // collect the players moves
+    Move* move1 = player1->makeMove();
+    Move* move2 = player2->makeMove();
+
+    int output = -1;
+    if (move1->getUID() >= move2->getUID()){
+        output = move1->isWinner(move2->getUID());
+        if (output ==  WINNER) return player1;
+        if (output == TIE) return nullptr;
+        return player2;
+    } else {
+        output = move2->isWinner(move1->getUID());
+        if (output ==  WINNER) return player2;
+        if (output == TIE) return nullptr;
+        return player1;
+    }
+    
+    return nullptr;
+}

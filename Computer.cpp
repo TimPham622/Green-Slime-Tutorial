@@ -1,15 +1,13 @@
+#include <string>
+
 #include "Computer.h"
-#include "Rock.h"
 
-Move * Computer::makeMove(){
-    Move * temp = new Rock();
-    return temp;
+// computer will always return 'R' (rock) when makeMove() is called
+Move* Computer::makeMove(){
+    return this->move_selector.string_to_move("Rock");
 }
 
-string Computer::getName(){
-    return name;
-}
-
-Computer::Computer(){
-    name = "Computer";
+// computer will always return "Computer" when getName() is called
+std::string Computer::getName(){
+    return "Computer";
 }
