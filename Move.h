@@ -1,18 +1,19 @@
 #pragma once
 
-#define INVALID -1
-#define WINNER 0
-#define TIE 1
-#define LOSER 2
-
 #include <string>
+#include <vector>
+#include <algorithm>
 
-// pure virtual move class
 class Move {
-public:
-    virtual int getUID() = 0;
+    protected:
+    std::string name;
+    std::vector<std::string> wins_against;
 
-    virtual std::string getName() = 0;
+    public:
+    Move(std::string name, std::vector<std::string> wins_against);
+    virtual ~Move() = default;
 
-    virtual int isWinner(int Opponent) = 0;
+    std::string getName() const;
+
+    virtual bool beats(Move * other);
 };

@@ -2,20 +2,9 @@
 #include <string>
 
 #include "Player.h"
-#include "Move.h"
 
-class Human : public Player{
-private:
-    // store the players name
-    std::string name;
+class Human : public Player {
 public:
-    // inisialise the player object with a name
-    Human();
-    Human(std::string name);
-
-    // get the move of the player (based on input)
-    Move* makeMove();
-
-    // return the name of the player
-    std::string getName();
+    Human(std::string name = "Human");
+    Move* makeMove() override;
 };

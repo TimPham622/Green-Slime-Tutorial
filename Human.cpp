@@ -1,29 +1,14 @@
-#include <iostream>
-#include<string>
-
 #include "Human.h"
 #include "MoveSelector.h"
+#include <iostream>
 
-// default constructor set name to "Human"
-Human::Human(){
-    this->name = "Human";
-}
 
-// set name to the provided value
-Human::Human(std::string name){
-    this->name = name;
-}
+Human::Human(std::string name) : Player(name) {}
 
-// get humans input and return it
-Move* Human::makeMove(){
-    std::string res;
-    std::cout << "Enter move:";
-    std::cin >> res;
+Move* Human::makeMove() {
+    std::string input;
+    std::cout << "Enter Move: ";
+    std::cin >> input;
 
-    return this->move_selector.string_to_move(res);
-}
-
-// return the humans name
-std::string Human::getName(){
-    return this->name;
+    return MoveSelector::createMove(input);
 }

@@ -1,3 +1,6 @@
-#include <bits/stdc++.h>
-using namespace std;
 #include "Player.h"
+Player::Player(std::string name) : name(name) {}
+
+std::string Player::getName() {
+    return this->name;
+}

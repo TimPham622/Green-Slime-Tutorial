@@ -1,13 +1,8 @@
 #pragma once
-#include "MoveSelector.h"
 #include "Player.h"
-
 
 class Referee {
 public:
-    // sets up the referee variable resultSquare
     Referee();
-
-    // returns the winning player from a game of rock paper scissors
-    Player* refGame(Player * player1, Player * player2);
+    Player* refGame(Player* player1, Player* player2);
 };
