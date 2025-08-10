@@ -1,3 +1,3 @@
 #include "Scissors.h"
 
-Scissors::Scissors() : Move("Scissors", {"Ninja", "Paper"}) {}
+Scissors::Scissors() : Move("Scissors", {"Paper"}) {}

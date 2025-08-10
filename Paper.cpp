@@ -1,3 +1,3 @@
 #include "Paper.h"
 
-Paper::Paper() : Move("Paper", {"Rock", "Zombie"}) {}
+Paper::Paper() : Move("Paper", {"Rock"}) {}

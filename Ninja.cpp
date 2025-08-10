@@ -1,3 +1,3 @@
 #include "Ninja.h"
 
-Ninja::Ninja() : Move("Ninja", {"Pirate", "Monkey"}) {}
+Ninja::Ninja() : Move("Ninja", {"Pirate", "Zombie"}) {}
