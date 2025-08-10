@@ -1,7 +1,7 @@
 #include "Human.h"
 #include "MoveSelector.h"
 #include <iostream>
-#include <ostream> 
+#include <ostream>
 
 Human::Human(std::string name) : Player(name) {}
 
