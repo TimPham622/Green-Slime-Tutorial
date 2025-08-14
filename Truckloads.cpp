@@ -21,3 +21,9 @@ int numTrucks(int numCrates, int loadSize) {
 }
 
 };
+
+
+int main() {
+
+    return 0;
+}

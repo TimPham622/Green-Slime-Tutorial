@@ -22,3 +22,7 @@ std::string reverseString(std::string characters) {
 }
 
 };
+
+int main() {
+    return 0;
+}
