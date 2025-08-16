@@ -2,11 +2,10 @@
 //See if it is less than load size
 //if not, keep splitting
 #include <iostream>
+#include "Truckloads.h"
+Truckloads::Truckloads(){};
 
-class Truckloads {
-
-public:
-int numTrucksHelper(int crates, int loadSize) {
+int Truckloads::numTrucksHelper(int crates, int loadSize) {
     if (crates <= loadSize) {
         return 1;
     }
@@ -16,14 +15,6 @@ int numTrucksHelper(int crates, int loadSize) {
     return numTrucksHelper(left, loadSize) + numTrucksHelper(right, loadSize);
 }
 
-int numTrucks(int numCrates, int loadSize) {
+int Truckloads::numTrucks(int numCrates, int loadSize) {
     return numTrucksHelper(numCrates, loadSize);
-}
-
-};
-
-
-int main() {
-
-    return 0;
 }

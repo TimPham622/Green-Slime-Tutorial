@@ -1,10 +1,9 @@
 #include <iostream>
 #include <string>
+#include "Reverser.h"
+Reverser::Reverser() {};
 
-class Reverser{
-
-public:
-int reverseDigit(int value) {
+int Reverser::reverseDigit(int value) {
     std::cout << value % 10;
     if (value < 10) {
         return -1;
@@ -12,17 +11,11 @@ int reverseDigit(int value) {
     return reverseDigit(value / 10);
 }
 
-std::string reverseString(std::string characters) {
-    if (characters.length() <= 0) {
+std::string Reverser::reverseString(std::string characters) {
+    if (characters.length() == 0) {
         return characters;
     }
     else {
         return reverseString(characters.substr(1) + characters[0]);
     }
-}
-
-};
-
-int main() {
-    return 0;
 }
