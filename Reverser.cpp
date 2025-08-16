@@ -12,10 +12,10 @@ int Reverser::reverseDigit(int value) {
 }
 
 std::string Reverser::reverseString(std::string characters) {
-    if (characters.length() == 0) {
+    if (characters.length() <= 1) {
         return characters;
     }
     else {
-        return reverseString(characters.substr(1) + characters[0]);
+        return reverseString(characters.substr(1)) + characters[0];
     }
 }
