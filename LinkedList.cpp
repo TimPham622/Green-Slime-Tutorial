@@ -55,22 +55,26 @@ void LinkedList::insertEnd(int newNum){
     return;
 }
 
-void LinkedList::insertPosition(int pos, int val) {
-    if (pos <= 1 || !head) {
-        head = new Node(val, head);
-        length++;
+void LinkedList::insertPosition(int pos, int newNum){
+    if (pos <= 1 || this->head == nullptr || length == 0){
+        insertStart(newNum);
+        return;
+    } else if (pos > length){
+        insertEnd(newNum);
         return;
     }
-    if (pos > length) {
-        insertEnd(val);
-        return;
+    Node* pointer = head;
+    int counter = 1;
+
+    while (counter < pos - 1 && pointer->get_link() != nullptr){
+        pointer = pointer->get_link();
+        counter++;
     }
-    Node* p = head;
-    for (int i = 0; i < pos - 1;i++) {
-        p=p->get_link();
-    }
-    p -> set_link(new Node(val, p->get_link()));
+    Node* temp = new Node(newNum, pointer->get_link());
+    pointer->set_link(temp);
+
     length++;
+    return;
 }
 
 bool LinkedList::deletePosition(int pos) {
