@@ -1,18 +1,31 @@
 #include "Node.h"
 #pragma once
 
+#include "Node.h"
+
 class LinkedList {
-    private:
+private:
     Node* head;
+    int length;
 
-    public:
+    void insertStart(int newNum);
+    void insertEnd(int newNum);
+
+public:
     LinkedList();
+    
     LinkedList(int* array, int len);
+    
     ~LinkedList();
-    void insertPosition(int pos, int newNum);
-    bool deletePosition(int pos);
-    int get(int pos);
-    int search(int target);
-    void printList();
 
+    
+    void insertPosition(int pos, int newNum);
+
+    bool deletePosition(int pos);
+    
+    int get(int pos);
+
+    int search(int target);
+
+    void printList();
 };
