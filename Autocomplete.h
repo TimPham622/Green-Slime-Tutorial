@@ -27,7 +27,7 @@ class Autocomplete {
     void insert(string word);
 
     pair<bool,TrieNode*> searchWord(string word);
-    vector<string> getSuggestion(string partialWord);
+    vector<string> getSuggestions(string partialWord);
 
 
 

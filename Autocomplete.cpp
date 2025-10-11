@@ -65,7 +65,7 @@ void Autocomplete::suffixHelper(vector<string>& res, string word, TrieNode* node
     }
 }
 
-vector<string> Autocomplete::getSuggestion(string partialWord){
+vector<string> Autocomplete::getSuggestions(string partialWord){
     vector<string> words;
 
     auto endOfWord = searchWord(partialWord);
