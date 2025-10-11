@@ -26,16 +26,14 @@ void Autocomplete::insert(string word) {
     TrieNode* currentNode = start;
 
     for (int i = 0; i < (int)word.length(); i++) {
-        if (currentNode -> children[word[i]] == nullptr) {
-            currentNode -> children[word[i]] == new TrieNode(word[i]);
+        if (currentNode->children.find(word[i]) == currentNode->children.end()) {
+            currentNode->children[word[i]] = new TrieNode(word[i]);
 
         }
 
-        currentNode == currentNode -> children[word[i]];
-
-
+        currentNode = currentNode->children[word[i]];
     }
-    currentNode -> endOfWord = true;
+    currentNode->endOfWord = true;
 }
 
 pair<bool, TrieNode*> Autocomplete::searchWord(string word) {
