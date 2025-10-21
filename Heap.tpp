@@ -241,7 +241,7 @@ public:
         if (this->isHeapEmpty()) {
             return std::numeric_limits<T>::min();
         }
-        return this.tree.at(1);
+        return this->tree.at(1);
     }
 };
 
