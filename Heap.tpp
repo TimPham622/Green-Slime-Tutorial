@@ -239,7 +239,7 @@ public:
     T getMin()
     {
         if (this->isHeapEmpty()) {
-            return std::numerical_limits<T>::min();
+            return std::numeric_limits<T>::min();
         }
         return this.tree.at(1);
     }
